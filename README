@@ -1,0 +1,31 @@
+A very simple utility, for when you want to easily read only a single column from an ActiveRecord model.
+
+Usage:
+
+    class Monster < ActiveRecord::Base
+      column_reader :name
+      column_reader :hairyness, :as => :hirsutenesses
+      column_reader :dob
+
+      scope :dangerous, :conditions => {:carnivorous => true}
+    end
+
+At it's simplest, it returns the values of just the given column:
+
+    Monster.names
+    # => ['Graham', 'Mike', 'Fuzzly']
+
+The default accessor is the column name pluralized, but using the :as option, another name can be chosen:
+
+    Monster.hirsutenesses
+    # => ['bald', 'very', 'very']
+
+Scopes are respected:
+
+    Monster.dangerous.names
+    # => ['Fuzzly']
+
+And columns are correctly type cast:
+
+    Monster.dobs:
+    # => [#<Date: 4886491/2,0,2299161>, #<Date: 2886491/2,0,2299161>, #<Date: 3886491/2,0,2299161>]

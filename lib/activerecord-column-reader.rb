@@ -1,0 +1,1 @@
+require 'penknife/active_record/column_reader'
