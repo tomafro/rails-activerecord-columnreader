@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    activerecord-column-reader (0.0.1)
+    activerecord-column-reader (0.0.2)
       activerecord (~> 3.0.3)
 
 GEM

@@ -23,7 +23,7 @@ spec = Dir.chdir(path) do
 
     # Change these as appropriate
     s.name              = "activerecord-column-reader"
-    s.version           = "0.0.1"
+    s.version           = "0.0.2"
     s.summary           = "Simple ActiveRecord optimization"
     s.author            = "Tom Ward"
     s.email             = "tom@popdog.net"
