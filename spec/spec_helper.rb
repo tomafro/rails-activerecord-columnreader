@@ -13,5 +13,6 @@ ActiveRecord::Schema.define(:version => 1) do
     t.string   'name'
     t.date     'dob'
     t.boolean  'carnivorous'
+    t.float    'stomachs'
   end
 end
