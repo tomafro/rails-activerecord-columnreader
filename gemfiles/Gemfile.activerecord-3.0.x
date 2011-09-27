@@ -1,5 +1,5 @@
 source :rubygems
 
-gem 'activerecord-column-reader', :path => ".."
+gemspec :path => ".."
 
 gem 'activerecord', '~>3.0.0'
