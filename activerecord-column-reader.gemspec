@@ -1,56 +1,31 @@
 # -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name = %q{activerecord-column-reader}
-  s.version = "0.0.2"
+  s.name              = "activerecord-column-reader"
+  s.version           = "0.0.2"
+  s.summary           = "Simple ActiveRecord optimization"
+  s.author            = "Tom Ward"
+  s.email             = "tom@popdog.net"
+  s.homepage          = "http://tomafro.net"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Tom Ward"]
-  s.date = %q{2011-03-13}
-  s.email = %q{tom@popdog.net}
-  s.extra_rdoc_files = [
-    "README"
-  ]
-  s.files = [
-    ".gitignore",
-     "Gemfile",
-     "Gemfile.lock",
-     "README",
-     "Rakefile",
-     "activerecord-column-reader.gemspec",
-     "lib/activerecord-column-reader.rb",
-     "lib/penknife/active_record.rb",
-     "lib/penknife/active_record/column_reader.rb",
-     "spec/penknife/column_reader_spec.rb",
-     "spec/spec_helper.rb"
-  ]
-  s.homepage = %q{http://tomafro.net}
-  s.rdoc_options = ["--main", "README"]
+  s.has_rdoc          = true
+  s.extra_rdoc_files  = %w(README)
+  s.rdoc_options      = %w(--main README)
+
+  # Add any extra files to include in the gem
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.2}
-  s.summary = %q{Simple ActiveRecord optimization}
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
+  # Main dependencies
+  s.add_dependency 'activerecord', '~>3.1.0'
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<activerecord>, ["~> 3.0.3"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.1.0"])
-      s.add_development_dependency(%q<rake>, ["~> 0.8.7"])
-      s.add_development_dependency(%q<sqlite3-ruby>, ["~> 1.3.1"])
-      s.add_development_dependency(%q<sdoc>, ["~> 0.2.20"])
-    else
-      s.add_dependency(%q<activerecord>, ["~> 3.0.3"])
-      s.add_dependency(%q<rspec>, ["~> 2.1.0"])
-      s.add_dependency(%q<rake>, ["~> 0.8.7"])
-      s.add_dependency(%q<sqlite3-ruby>, ["~> 1.3.1"])
-      s.add_dependency(%q<sdoc>, ["~> 0.2.20"])
-    end
-  else
-    s.add_dependency(%q<activerecord>, ["~> 3.0.3"])
-    s.add_dependency(%q<rspec>, ["~> 2.1.0"])
-    s.add_dependency(%q<rake>, ["~> 0.8.7"])
-    s.add_dependency(%q<sqlite3-ruby>, ["~> 1.3.1"])
-    s.add_dependency(%q<sdoc>, ["~> 0.2.20"])
-  end
+  # Development only dependencies
+  s.add_development_dependency 'rspec', '~>2.1.0'
+  s.add_development_dependency 'rake', '~>0.8.7'
+  s.add_development_dependency 'sqlite3', '~>1.3.4'
+  s.add_development_dependency 'sqlite3-ruby', '~>1.3.3'
+  s.add_development_dependency 'sdoc', '~>0.2.20'
 end
