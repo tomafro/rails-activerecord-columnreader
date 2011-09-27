@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name              = "activerecord-column-reader"
-  s.version           = "0.1.0"
+  s.version           = "1.0.0"
   s.summary           = "Simple ActiveRecord optimization"
   s.author            = "Tom Ward"
   s.email             = "tom@popdog.net"
