@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # Main dependencies
-  s.add_dependency 'activerecord', '~>3.1.0'
+  s.add_dependency 'activerecord', '~>3.0'
 
   # Development only dependencies
   s.add_development_dependency 'rspec', '~>2.1.0'
