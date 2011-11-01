@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'activerecord', '~>3.0'
 
   # Development only dependencies
-  s.add_development_dependency 'rspec', '~>2.1.0'
+  s.add_development_dependency 'rspec', '~>2.7.0'
   s.add_development_dependency 'rake', '~>0.8.7'
   s.add_development_dependency 'sqlite3', '~>1.3.4'
   s.add_development_dependency 'sqlite3-ruby', '~>1.3.3'
